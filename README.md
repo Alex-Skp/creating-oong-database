@@ -1,5 +1,4 @@
-HEAD
-# Data Modelling with postgres
+# Data Modelling with postgresSQL
 ## Case Study:
 **Creating a database for Sparkify**
 The objective is to create a relational database using PostgreSQL based in two datasets:
