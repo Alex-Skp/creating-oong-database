@@ -33,3 +33,4 @@ We will extract user play interactions, to create the database, and store a clea
 -Make a diagram of the database for this readme file.
 -Revise the queries which extract the ID information for the songplays table, as a lot of None values are returned. Maybe a bigger song database is needed, or a better matching search logic is needed. 
 -Run a local version of this project, and upload in my personal GitHub. 
+
