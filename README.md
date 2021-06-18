@@ -30,6 +30,6 @@ We will extract user play interactions, to create the database, and store a clea
 4.- During the process test.ipynb was used to read what has been written in the tables, to keep track of the progress.
 
 ## To do / to be improved:
--Make a diagram of the database for this readme file
+-Make a diagram of the database for this readme file.
 -Revise the queries which extract the ID information for the songplays table, as a lot of None values are returned. Maybe a bigger song database is needed, or a better matching search logic is needed. 
 -Run a local version of this project, and upload in my personal GitHub 
