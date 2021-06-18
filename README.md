@@ -1,4 +1,4 @@
-# Data Modelling with postgresSQL
+# Data Modelling with postgres
 ## Case Study:
 **Creating a database for Sparkify**
 The objective is to create a relational database using PostgreSQL based in two datasets:
@@ -23,13 +23,13 @@ We will extract user play interactions, to create the database, and store a clea
     start_time, hour, day, week, month, year, weekday
 
 ## Steps taken:
-1.- Wrote all SQL queries regarding drop and creation of all tables, and revised the script in create_tables.py Running this script will create a clean resetted version of the tables. 
-2.- Started the ETL process, with etl.ipynb, using python, which calls for postgreSQL functions written in sql_queries.py
-3.- Completed the script in etl.py, which reads the datasets and populates the tables.
-4.- During the process test.ipynb was used to read what has been written in the tables, to keep track of the progress.
+1.- Wrote all SQL queries regarding drop and creation of all tables, and revised the script in create_tables.py Running this script will create a clean resetted version of the tables.   
+2.- Started the ETL process, with etl.ipynb, using python, which calls for postgreSQL functions written in sql_queries.py.  
+3.- Completed the script in etl.py, which reads the datasets and populates the tables.    
+4.- During the process test.ipynb was used to read what has been written in the tables, to keep track of the progress.  
 
 ## To do / to be improved:
--Make a diagram of the database for this readme file.
--Revise the queries which extract the ID information for the songplays table, as a lot of None values are returned. Maybe a bigger song database is needed, or a better matching search logic is needed. 
--Run a local version of this project, and upload in my personal GitHub. 
+-Make a diagram of the database for this readme file.  
+-Revise the queries which extract the ID information for the songplays table, as a lot of None values are returned. Maybe a bigger song database is needed, or a better matching search logic is needed.   
+-Run a local version of this project, and upload in my personal GitHub.   
 
