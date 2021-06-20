@@ -4,6 +4,12 @@ import psycopg2
 import pandas as pd
 from sql_queries import *
 
+#Database connection credentials
+host = "127.0.0.1"
+dbname = "sparkifydb"
+user = "postgres"
+password = "PostgreSQL"
+
 
 def process_song_file(cur, filepath):
     """
@@ -118,12 +124,12 @@ def process_data(cur, conn, filepath, func):
         print('{}/{} files processed.'.format(i, num_files))
 
 
-def main():
+def main(host,dbname,user,password):
     """
     Connects to the database, sets the cursor and executes the data extraction, transformation, and load.
     closes the connection in the end.
     """
-    conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=postgres password=PostgreSQL")
+    conn = psycopg2.connect("host={} dbname={} user={} password={}".format(host,dbname,user,password))
     cur = conn.cursor()
 
     process_data(cur, conn, filepath='data/song_data', func=process_song_file)
@@ -133,4 +139,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(host,dbname,user,password)
