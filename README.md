@@ -49,6 +49,14 @@ It's important to include this script in your .gitignore file, this way your pas
 	If all went well, you will see printed that all files were loaded in the tables.   	
 4- To test if the data has been properly inserted, you can run the jupyter notebook test.ipynb, and look into what has been inserted in the tables.   
 
+## Description of the files:
+
+* data: where all .json files are stored, this data will be retrieved to populate the database.  
+* create_tables.py: script that will create the database and the tables, dropping previous versions if they exist.  
+* etl.ipynb: Jupyter notebook where the first run of extraction transform and load is executed. The code used in this script has been later used to create the final etl.py. Open to see more details in the transformation process. Be careful not to leave the notebook running, as it won't close the connection to the server.  
+* etl.py: Script used to extract, transform and load the data from the data file in this repository, to the local database.  
+* sql_queries.py: This python file stores all sql queries as variables, and are called by other scripts, for better readability in the code.  
+* test.ipynb: Run it to test if the tables have been created properly and to visualize the content. Reset or close to disconnect from the database.  
 
 ## To do / to be improved:
 -Make a diagram of the database for this readme file.  
