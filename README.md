@@ -23,13 +23,13 @@ We will extract user play interactions, to create the database, and store a clea
     start_time, hour, day, week, month, year, weekday
 
 ## Steps taken:
-1.- Wrote all SQL queries regarding drop and creation of all tables, and revised the script in create_tables.py Running this script will create a clean resetted version of the tables.   
-2.- Started the ETL process, with etl.ipynb, using python, which calls for postgreSQL functions written in sql_queries.py.  
-3.- Completed the script in etl.py, which reads the datasets and populates the tables.    
-4.- During the process test.ipynb was used to read what has been written in the tables, to keep track of the progress.  
+1- Wrote all SQL queries regarding drop and creation of all tables, and revised the script in create_tables.py Running this script will create a clean resetted version of the tables.   
+2- Started the ETL process, with etl.ipynb, using python, which calls for postgreSQL functions written in sql_queries.py.  
+3- Completed the script in etl.py, which reads the datasets and populates the tables.    
+4- During the process test.ipynb was used to read what has been written in the tables, to keep track of the progress.  
 
 ## How to run the scripts: 
-In order to run this project locally you will have to: 
+In order to run this project locally you will have to:   
 1- Create a postgreSQL server. You can find the installation files [here](https://www.postgresql.org/download/).  
 2- From the installation, you will define a username and password to your server. To securely store them, create a file called credentials.py where you should declare two variables like this:  
 ```python
@@ -46,14 +46,13 @@ It's important to include this script in your .gitignore file, this way your pas
 	```
 	$ python3 etl.py
 	```  
-	If all went well, you will see printed that all files were loaded in the tables.   
-	
+	If all went well, you will see printed that all files were loaded in the tables.   	
 4- To test if the data has been properly inserted, you can run the jupyter notebook test.ipynb, and look into what has been inserted in the tables.   
 
 
 ## To do / to be improved:
 -Make a diagram of the database for this readme file.  
--Test this project with a bigger database, and not a sample of it
+-Test this project with a bigger database, and not a sample of it.
 
 
 
