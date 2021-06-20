@@ -6,6 +6,13 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    This function reads the song json file from the filepath
+    and inserts the record in the song and artist tables. 
+    Arguments:
+        cur: cursor object for the database connection.
+        filepath: json song file path as a string.
+    """
     # open song file
     df = pd.read_json(filepath, typ='series')
 
@@ -19,6 +26,16 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    This function will process the log files:
+    - timestamps are converted and inserted in the time table.
+    - user data is gathered and inserted in user table.
+    - songplays are queried in the song and artist tables to retrieve both IDs;
+      If no matches are found it will write None, then the data is inserted in songplay table.
+    Arguments:
+        cur: cursor object for the database connection.
+        filepath: json log file path as a string.
+    """
     # open log file
     df = pd.read_json(filepath, lines=True)
 
@@ -74,6 +91,15 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    This function walks through all folders in the filepath, and applies the function passed as func, in order to write the data in the databases pointed by the cursor. 
+    Arguments:
+        cur: cursor object.
+        conn: connection to the database.
+        filepath: location of data file path where json files are located, as a string.
+        func: function that transforms data and inserts it in the database
+        
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
@@ -93,6 +119,10 @@ def process_data(cur, conn, filepath, func):
 
 
 def main():
+    """
+    Connects to the database, sets the cursor and executes the data extraction, transformation, and load.
+    closes the connection in the end.
+    """
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=postgres password=PostgreSQL")
     cur = conn.cursor()
 
