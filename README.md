@@ -31,21 +31,21 @@ We will extract user play interactions, to create the database, and store a clea
 ## How to run the scripts: 
 In order to run this project locally you will have to: 
 1- Create a postgreSQL server. You can find the installation files [here](https://www.postgresql.org/download/).  
-2- From the installation, you will define a username and password to your server. To securely store them, create a file called credentials.py where you declare two variables like this:  
+2- From the installation, you will define a username and password to your server. To securely store them, create a file called credentials.py where you should declare two variables like this:  
 ```python
 user = "user_example"
 password = "password_example"
 ```
-It's important to include this script in your .gitignore file, this way your password won't be uploaded to github in the case you publish the project.   
+It's important to include this script in your .gitignore file, this way your password won't be uploaded to github in the case you publish the project. This script will be called by the functions to retrieve the server's username and password.  
 3- Run your scripts from your terminal. **Careful** make sure you don't have a database already called sparkifydb, as this script will drop and create a new one, as well as the tables in it:  
-	* First to create the database: 
+	* First to create the database:   
 	```
 	$ python3 create_tables.py
-	```
-	* Then to fill the tables:
+	```  
+	* Then to fill the tables:  
 	```
 	$ python3 etl.py
-	```
+	```  
 	If all went well, you will see printed that all files were loaded in the tables.   
 	
 4- To test if the data has been properly inserted, you can run the jupyter notebook test.ipynb, and look into what has been inserted in the tables.   
